@@ -2,12 +2,19 @@
 /* Change as needed */
 
 body{ 
-  font: 62.5% "Trebuchet MS", sans-serif; 
+  font: 70% "Trebuchet MS", sans-serif; 
   margin: 50px;
 }
 
 .headers { 
   margin-top: 2em; 
+}
+
+.slogan {
+    font-size: 1.6em;
+    line-height: 1.5;
+    margin: 1em 0;
+    width: 50%;
 }
 
 .text {
@@ -17,19 +24,27 @@ body{
   width: 50%;
 }
 
-#dialog_link {
+#curriculum {
+  width: 50%;
+}
+
+#generate {
   padding: .4em 1em .4em 20px;
   text-decoration: none;
   position: relative;
 }
 
-#dialog_link span.ui-icon {
+#generate span.ui-icon {
   margin: 0 5px 0 0;
   position: absolute;
   left: .2em;
   top: 50%;
   margin-top: -8px;
 }
+
+/* FROM HERE ON IS THE ORIGINAL CODE FOR THE EXAMPLE PAGE. IF SOMETHING IS
+   CHANGED FOR OUR FUNCTIONALITY, PLEASE PUT IT ABOVE THIS LINE. EVERYTHING
+   NOT USED SHOULD BE EVENTUALLY REMOVED. */
 
 ul#icons {
   margin: 0; 

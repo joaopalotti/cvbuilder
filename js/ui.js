@@ -3,13 +3,40 @@
  * Code for customizing interface elements and interactivity.     *
  *                                                                *
  ******************************************************************/
+jQuery(document).ready(function(){
+	$('.accordion .head').click(function() {
+		$(this).next().toggle();
+		return false;
+	}).next().hide();
+});
 
 $(function(){
 
-	// Accordion
-	$("#accordion").accordion({ header: "h3" });
+	// Curriculum Vitae sections
+	$("#curriculum")
+    .accordion({ 
+      header: "h3" 
+    })
+    .sortable({
+      axis: "y",
+      handle: "h3",
+      stop: function(event, ui) {
+        // TODO: remove this and test on IE
+        ui.item.children("h3").triggerHandle("focusout");
+      }
+    });
 
-	// Tabs
+	// Call the JavaScript function to generate the curriculum
+	$('#generate').click(function(){
+    genCV();
+		return false;
+	});
+	
+  // FROM HERE ON IS THE ORIGINAL CODE FOR THE EXAMPLE PAGE. IF SOMETHING IS
+  // CHANGED FOR OUR FUNCTIONALITY, PLEASE PUT IT ABOVE THIS LINE. EVERYTHING
+  // NOT USED SHOULD BE EVENTUALLY REMOVED.
+
+  // Tabs
 	$('#tabs').tabs();
 
 	// Dialog
@@ -24,12 +51,6 @@ $(function(){
 				$(this).dialog("close");
 			}
 		}
-	});
-
-	// Dialog Link
-	$('#dialog_link').click(function(){
-		$('#dialog').dialog('open');
-		return false;
 	});
 
 	// Datepicker
