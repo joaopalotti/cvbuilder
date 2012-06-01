@@ -39,7 +39,19 @@ $(function(){
       return false;
     });
 
-  $('#generate, #login')
+  $('#newaccount')
+    .click(function(){
+      window.location="register.html";
+      return false;
+    });
+  
+  $('#register')
+    .click(function(){
+      register();
+      return false;
+    });
+  
+  $('.button')
     .hover(
       function(){ $(this).addClass('ui-state-hover'); },
       function(){ $(this).removeClass('ui-state-hover'); }
