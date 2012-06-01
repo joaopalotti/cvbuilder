@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>CVBuilder</title>
+		<!-- Style files -->
+    <link type="text/css" href="css/start/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+    <link type="text/css" href="css/style.css" rel="stylesheet"/>
+		<!-- JavaScript files for interface functionality -->
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
+    <!-- JavaScript files for processing information -->
+    <script type="text/javascript" src="js/process.js"></script>
+  </head>
+
+  <body>
+    <h1>CVBuilder</h1>
+    <p class="slogan"> Because companies should not be forced to look at your ugly
+    and incomplete curriculum.</p>
+    <p class="text"> Developed by Jo&atilde;o Palotti and Giselle Machado. </p>
+
+    <h2 class="headers">Sections of you Curriculum Vitae</h2>
+    <p class="text">Some of these are optional, some are not. You can choose the
+    order in which they are displayed by changing the sections' positions (just
+    drag the window).</p>
+   
+    <!-- TODO: try to make more than one section open at the same time -->
+    <!-- TODO: put closing button for excluding a section (or disable it somehow) -->
+    <div id="curriculum">
+			<div>
+				<h3><a href="#">Personal information</a></h3>
+				<div>Mandatory section</div>
+			</div>
+			<div>
+				<h3><a href="#">Education</a></h3>
+				<div>Mandatory section</div>
+			</div>
+			<div>
+				<h3><a href="#">Academic experience</a></h3>
+				<div>Optional section</div>
+			</div>
+			<div>
+				<h3><a href="#">Professional experience</a></h3>
+				<div>Optional section</div>
+			</div>
+		</div>
+
+  <p class="text"><a href="#" id="generate" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-document"></span>Build CV</a></p>
+
+  </body>
+</html>
