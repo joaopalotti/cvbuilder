@@ -27,10 +27,23 @@ $(function(){
     });
 
 	// Call the JavaScript function to generate the curriculum
-	$('#generate').click(function(){
-    genCV();
-		return false;
-	});
+	$('#generate')
+    .click(function(){
+      genCV();
+		  return false;
+	  });
+
+  $('#login')
+    .click(function(){
+      login();
+      return false;
+    });
+
+  $('#generate, #login')
+    .hover(
+      function(){ $(this).addClass('ui-state-hover'); },
+      function(){ $(this).removeClass('ui-state-hover'); }
+    );
 	
   // FROM HERE ON IS THE ORIGINAL CODE FOR THE EXAMPLE PAGE. IF SOMETHING IS
   // CHANGED FOR OUR FUNCTIONALITY, PLEASE PUT IT ABOVE THIS LINE. EVERYTHING

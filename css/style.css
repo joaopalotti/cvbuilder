@@ -28,13 +28,13 @@ body{
   width: 50%;
 }
 
-#generate {
+.button {
   padding: .4em 1em .4em 20px;
   text-decoration: none;
   position: relative;
 }
 
-#generate span.ui-icon {
+.button span.ui-icon {
   margin: 0 5px 0 0;
   position: absolute;
   left: .2em;
