@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="curriculum">
+<xs:complexType>
+<xs:sequence>
+
+<xs:element name="personal">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="dateOfBirth" type="xs:date"/>
+      <xs:element name="homeAddress" type="xs:string"/>
+      <xs:element name="homePhone" type="xs:string"/>
+      <xs:element name="mobile" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="affiliation">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="university" type="xs:string"/>
+      <xs:element name="institute" type="xs:string"/>
+      <xs:element name="address" type="xs:string"/>
+      <xs:element name="telephone" type="xs:string"/>
+    <xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="education">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="institution" type="xs:string"/>
+      <xs:element name="department" type="xs:string"/>
+      <xs:element name="degree">
+        <xs:complexType>
+        <!-- TODO: Create a tag for each degree??
+            - Technical High School
+              Major
+            - Bachelor Studies
+              Major
+            - Master of Science (MSc)
+              Major
+              Advisor
+              Thesis
+            - Philosophy doctor (PhD)
+              Major
+              Advisor
+              Thesis
+            - Post-doc
+              ???
+        -->
+        <xs:complexType>
+      </xs:element>
+      <!-- TODO: put month and year -->
+      <xs:element name="start" type="xs:string"/>
+      <xs:element name="end" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+</xs:schema>
