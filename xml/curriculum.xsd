@@ -19,6 +19,10 @@
   </xs:complexType>
 </xs:element>
 
+<!-- random text area to be filled in by reasearch interests or other useless
+     information -->
+<xs:element name="interests" type="xs:string"/>
+
 <xs:element name="affiliation">
   <xs:complexType>
     <xs:sequence>
@@ -59,6 +63,55 @@
       <xs:element name="start" type="xs:string"/>
       <xs:element name="end" type="xs:string"/>
     </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="academics">
+</xs:element>
+
+<xs:element name="jobs">
+</xs:element>
+
+<xs:element name="publications">
+  <!--
+    - conference papers
+    - journal papers
+    - book chapters
+    - books
+    ...
+    divide all??
+  -->
+</xs:element>
+
+<xs:element name="awards">
+</xs:element>
+
+<xs:element name="courses">
+</xs:element>
+
+<xs:element name="events">
+  <!-- talks, participation in conferences as chair, organizors, etc. -->
+</xs:element>
+
+<xs:element name="languages">
+  <xs:complexType>
+    <xs:element name="lang" minOccurs=1 maxOccurs=99>
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="idiom" type="xs:string"/>
+          <xs:element name="level">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Basic"/>
+                <xs:enumeration value="Intermediate"/>
+                <xs:enumeration value="Advanced"/>
+                <xs:enumeration value="Fluent"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
   </xs:complexType>
 </xs:element>
 
