@@ -16,8 +16,8 @@
 
   <body>
     <h1>CVBuilder</h1>
-    <p class="slogan"> Because companies should not be forced to look at your ugly
-    and incomplete curriculum.</p>
+    <p class="slogan"> TODO: we shouldn't have to rewrite this header in every
+    html... (ajax?) </p>
     <p class="text"> Developed by Jo&atilde;o Palotti and Giselle Machado. </p>
 
     <h2 class="headers">Sections of you Curriculum Vitae</h2>
@@ -29,15 +29,25 @@
     <!-- TODO: put closing button for excluding a section (or disable it somehow) -->
     <div id="curriculum">
 			<div>
-				<h3><a href="#">Personal information</a></h3>
-				<div>Mandatory section</div>
+				<h3><a href="#">Personal information *</a></h3>
+				<div>
+          <!-- TODO: fix the datatypes and sizes -->
+          Name: <input name="name" type="text"/><br>
+          Title: <input name="title" type="text"/><br>
+          Date of birth: <input name="dateOfBirth" type="text"/><br>
+          Address: <input name="homeAddress" type="text"/><br>
+          Phone: <input name="homePhone" type="text"/><br>
+          Mobile: <input name="mobile" type="text"/><br>
+          E-mail: <input name="email" type="text"/><br>
+          Web-site: <input name="site" type="text"/><br>
+        </div>
 			</div>
 			<div>
 				<h3><a href="#">Education</a></h3>
 				<div>Mandatory section</div>
 			</div>
 			<div>
-				<h3><a href="#">Academic experience</a></h3>
+				<h3><a href="#">Experience</a></h3>
 				<div>Optional section</div>
 			</div>
 			<div>
