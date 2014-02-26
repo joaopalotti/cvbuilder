@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- TODO: define optional and mandatory elements? -->
+
+<xs:element name="curriculum">
+<xs:complexType>
+<xs:sequence>
+
+<xs:element name="personal">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="dateOfBirth" type="xs:date"/>
+      <xs:element name="homeAddress" type="xs:string"/>
+      <xs:element name="homePhone" type="xs:string"/>
+      <xs:element name="mobile" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="site" type="xs:anyURI"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!-- random text area to be filled in by reasearch interests or other useless
+     information -->
+<xs:element name="description" type="xs:string">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="desc_title" type="xs:string"/>
+      <xs:element name="desc_text" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="jobs">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="job" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="institution" type="xs:string"/>
+            <xs:element name="location" type="xs:string"/>
+            <xs:element name="start" type="xs:gYearMonth"/>
+            <xs:element name="end" type="xs:gYearMonth"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="academia">
+  <xs:complexType>
+  <xs:sequence>
+    <xs:element name="education" minOccurs="1" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="institution" type="xs:string"/>
+          <xs:element name="department" type="xs:string"/>
+          <xs:element name="degree">
+            <xs:complexType>
+            <xs:sequence>
+              <xs:element name="degree_type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Technical High School"/>
+                    <xs:enumeration value="Bachelor"/>
+                    <xs:enumeration value="MSc"/>
+                    <xs:enumeration value="PhD"/>
+                    <xs:enumeration value="Post-doc"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <!-- Put description of thesis and etc. -->
+              <xs:element name="degree_desc" type="xs:string"/>
+            </xs:sequence>  
+            </xs:complexType>
+          </xs:element>
+          <!-- put month and year -->
+          <xs:element name="start" type="xs:gYearMonth"/>
+          <xs:element name="end" type="xs:gYearMonth"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="publications">
+  <xs:complexType>
+  <xs:sequence>
+    <xs:element name="publication" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="authors" type="xs:string"/>
+        <!-- journal, conference, book, tech rep, etc. -->
+        <xs:element name="place" type="xs:string"/>
+        <xs:element name="year" type="xs:gYear"/>
+        <xs:element name="link" type="xs:anyURI"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="skills">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="skill" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!-- Courses, events, awards, etc -->
+<xs:element name="extras">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="extra" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="languages">
+  <xs:complexType>
+  <xs:sequence>
+    <xs:element name="lang" minOccurs="1" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="idiom" type="xs:string"/>
+          <xs:element name="level">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Basic"/>
+                <xs:enumeration value="Intermediate"/>
+                <xs:enumeration value="Advanced"/>
+                <xs:enumeration value="Fluent"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+</xs:schema>

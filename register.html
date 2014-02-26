@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>CVBuilder</title>
+		<!-- Style files -->
+    <link type="text/css" href="css/start/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+    <link type="text/css" href="css/style.css" rel="stylesheet"/>
+		<!-- JavaScript files for interface functionality -->
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
+    <!-- JavaScript files for processing information -->
+    <script type="text/javascript" src="js/process.js"></script>
+  </head>
+  
+  <script type="text/javascript">
+  //$(document).ready(function () {
+
+      //Demo code
+      //$('.password-container').pschecker({ onPasswordValidate: validatePassword, onPasswordMatch: matchPassword });
+      
+      //var submitbutton = $('.submit-button');
+      //var errorBox = $('.error');
+      //errorBox.css('visibility', 'hidden');
+      //submitbutton.attr("disabled", "disabled");
+
+      //this function will handle onPasswordValidate callback, which mererly checks the password against minimum length
+      //function validatePassword(isValid) {
+      //  if (!isValid)
+      //    errorBox.css('visibility', 'visible');
+      //  else
+      //    errorBox.css('visibility', 'hidden');
+      //}
+      ////this function will be called when both passwords match
+      //function matchPassword(isMatched) {
+      //  if (isMatched) {
+      //   submitbutton.addClass('unlocked').removeClass('locked');
+      //    submitbutton.removeAttr("disabled", "disabled");
+      //  }
+      //  else {
+      //   submitbutton.attr("disabled", "disabled");
+      //    submitbutton.addClass('locked').removeClass('unlocked');
+      //  }
+      //}
+  //});
+//</script>
+
+
+
+  <body>
+    <h1>Welcome to CVBuilder</h1>
+    <p class="slogan"> Because companies should not be forced to look at your ugly
+    and incomplete curriculum.</p>
+    <p class="text"> Developed by Jo&atilde;o Palotti and Giselle Machado. </p>
+
+    TODO: this screen
+
+    <p class="text">Username:<input id="username" type="text"/></p>
+    <p class="text">E-mail:<input id="email" type="text"/></p>
+    <p class="text">Choose a password:<input class="passToCheck" id="password" type="password"/></p>
+    <p class="text">Double-check password:<input class="passToCheck" id="password" type="password"/></p>
+
+    <p class="text">
+      <a href="#" id="register" class="ui-state-default ui-corner-all button"><span class="ui-icon ui-icon-check"></span>Ok!</a>
+    </p>
+
+  </body>
+</html>
