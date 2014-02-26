@@ -65,3 +65,9 @@ ul#icons span.ui-icon {
   margin: 0 4px;
 }
 
+.bordedDiv {
+    border:2px solid;
+    border-radius:20px;
+    padding: 20px 20px;
+}
+

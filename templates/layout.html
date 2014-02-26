@@ -1,0 +1,37 @@
+<!doctype html>
+<title>CV Builder</title>
+
+<link type="text/css" href="jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+<link type="text/css" href="css/style.css" rel="stylesheet"/>
+    <!-- JavaScript files for interface functionality -->
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<!-- JavaScript files for processing information -->
+<script type="text/javascript" src="js/process.js"></script>
+
+
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='jquery-ui-1.8.29.custom.css') }}">
+<link type="text/css" href="css/start/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+<link type="text/css" href="css/style.css" rel="stylesheet"/>
+
+<script type=text/javascript src="{{url_for('static', filename='jquery-1.7.2.min.js') }}"></script>
+<script type=text/javascript src="{{url_for('static', filename='jquery-ui-1.8.20.custom.min.js') }}"></script >
+<script type=text/javascript src="{{url_for('static', filename='jquery-ui-1.8.20.custom.css') }}"></script >
+<script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% block body %}{% endblock %}

@@ -15,16 +15,18 @@ $(function(){
 	// Curriculum Vitae sections
 	$("#curriculum")
     .accordion({ 
-      header: "h3" 
+      heightStyle: "content",
+      header: "h3"
     })
-    .sortable({
+    /*.sortable({
       axis: "y",
       handle: "h3",
       stop: function(event, ui) {
         // TODO: remove this and test on IE
         ui.item.children("h3").triggerHandle("focusout");
       }
-    });
+    })*/
+    ;
 
 	// Call the JavaScript function to generate the curriculum
 	$('#generate')
@@ -88,5 +90,68 @@ $(function(){
 		function() { $(this).removeClass('ui-state-hover'); }
 	);
 
+    //Make education main div sortable
+    $("#educationMainDiv").sortable();
+    
+    $(".removeDivButton").button({
+        icons: {
+        primary: "ui-icon-circle-close"
+        },
+        text: false
+    }).click(
+        function(e) { 
+            $(this).parent().remove()
+        }
+    );
+    
+    //Button to add another div inside the accordion
+    var eduDivCnt = 1;
+    $(".addEducationDivButton").button({
+        icons: {
+        primary: "ui-icon-circle-plus"
+        },
+        text: false
+    }).click(
+        function(e) { 
+            eduDivCnt++;
+            $('<div class="bordedDiv">\
+                    <button class="removeDivButton"  id ="removeEdu'+eduDivCnt+'"> Remove this education info </button>\
+                    <p>Institution: <input id="institution'+ eduDivCnt +'" size="50"/> </p>\
+                    <p>Start year: <input id="begin'+ eduDivCnt +'" size="4"/>   End year (leave blank if not finished): <input id="end'+ eduDivCnt +'" size="4"/> </p>\
+                    <p>Major: <input id="major'+ eduDivCnt +'" size="25"/> <i>(Computer Science, Engineering, Architecture, etc.)</i> </p>\
+                    <p>Degree: <input id="level' + eduDivCnt +'" size="20"/> <i>(Bachelor, Master, PhD, MBA, specialization?)</i> </p>\
+                    <p>Other information (maybe the title of your thesis or area of specialization?): </p>\
+                    <textarea id="info' + eduDivCnt +'" size="50" style="resize: none" rows="3" cols="50"> </textarea>\
+               </div>').prependTo('#educationMainDiv');
+
+        }
+    );
+    
+    //Button to add another div inside the accordion in the Professional section
+    var profDivCnt = 1;
+    $(".addProfessionalExpDivButton").button({
+        icons: {
+        primary: "ui-icon-circle-plus"
+        },
+        text: false
+    }).click(
+        function(e) { 
+            profCnt++;
+            $('<div class="bordedDiv">\
+                    <button id="buttonProf'+profCnt+'"> Remove this education info </button>\
+                    <p>Institution: <input id="institution'+ profCnt +'" size="50"/> </p>\
+                    <p>Start year: <input id="begin'+ profCnt +'" size="4"/>   End year (leave blank if not finished): <input id="end'+ profCnt +'" size="4"/> </p>\
+                    <p>Major: <input id="major'+ profCnt +'" size="25"/> <i>(Computer Science, Engineering, Architecture, etc.)</i> </p>\
+                    <p>Degree: <input id="level' + profCnt +'" size="20"/> <i>(Bachelor, Master, PhD, MBA, specialization?)</i> </p>\
+                    <p>Other information (maybe the title of your thesis or area of specialization?): </p>\
+                    <textarea id="info' + profCnt +'" size="50" style="resize: none" rows="3" cols="50"> </textarea>\
+               </div>').prependTo('#educationMainDiv');
+
+            $("#buttonEdu'+profCnt'").addClass('removeDivButton');
+        }
+    );
+
+
+    ;
 });
 

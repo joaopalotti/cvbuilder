@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>CVBuilder</title>
 		<!-- Style files -->
-    <link type="text/css" href="css/start/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+    <link type="text/css" href="css/start/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" />
     <link type="text/css" href="css/style.css" rel="stylesheet"/>
 		<!-- JavaScript files for interface functionality -->
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
     <!-- JavaScript files for processing information -->
     <script type="text/javascript" src="js/process.js"></script>
@@ -21,30 +21,75 @@
     <p class="text"> Developed by Jo&atilde;o Palotti and Giselle Machado. </p>
 
     <h2 class="headers">Sections of you Curriculum Vitae</h2>
-    <p class="text">Some of these are optional, some are not. You can choose the
+    <p class="text">Some of these are optional, some are not. Mandatory items are marked with <b>*</b>.
+    
+    You can choose the
     order in which they are displayed by changing the sections' positions (just
-    drag the window).</p>
+    drag the window).
+    
+    Empty optional fields are not displayed. 
+    </p>
    
     <!-- TODO: try to make more than one section open at the same time -->
     <!-- TODO: put closing button for excluding a section (or disable it somehow) -->
+    <!-- TODO: align the boxes properly. -->
     <div id="curriculum">
+		<div>
+			<h3><a href="#">Personal information *</a></h3>
 			<div>
-				<h3><a href="#">Personal information</a></h3>
-				<div>Mandatory section</div>
-			</div>
-			<div>
-				<h3><a href="#">Education</a></h3>
-				<div>Mandatory section</div>
-			</div>
-			<div>
-				<h3><a href="#">Academic experience</a></h3>
-				<div>Optional section</div>
-			</div>
-			<div>
-				<h3><a href="#">Professional experience</a></h3>
-				<div>Optional section</div>
-			</div>
+                <p>First Name <b>*</b>:  <input id="firstName" size="30"/> <i>(Ex. John)</i></p>
+                <p>Last Name <b>*</b>:  <input id="lastName" size="30"/> <i>(Ex. Smith)</i></p>
+                <p>Titles:     <input id="titles" size="10"/>  <i>(Ex. MSc., PhD., Dr.)</i></p>
+                <b>Contact:</b> <i>How can they reach you?</i>
+                <p>Email <b>*</b>:     <input id="email" size="10"/>  <i>(name@company.com)</i></p>
+                <p>Telephone (main) <b>*</b>:     <input id="phoneFirst" size="10"/>  <i>(555 123 123)</i></p>
+                <p>Telephone (second):     <input id="phoneSecond" size="10"/>  <i>(555 123 123)</i></p>
+                <p>Telephone (third):     <input id="phoneThird" size="10"/>  <i>(555 123 123)</i></p>
+                <p>Street and house number: <input id="street" size="50"/> </p>
+                <p>City: <input id="city" size="15"/>    State: <input id="state" size="15"/> </p>
+                <p>ZIP code: <input id="zip" size="10"/>    Country: <input id="country" size="15"/> </p>
+            </div>
 		</div>
+		<div>
+			<h3><a href="#">Education *</a></h3>
+            <div>
+                <div>
+                        <button class="addEducationDivButton"> Add another education form </button>
+                </div>
+                <div id="educationMainDiv">
+                    <div class="bordedDiv">
+                        <button id="removeEdu1" class="removeDivButton"> Remove this education info </button>
+                        <p>Institution: <input id="institution1" size="50"/> </p>
+                        <p>Start year: <input id="begin1" size="4"/>   End year (leave blank if not finished): <input id="end1" size="4"/> </p>
+                        <p>Major: <input id="major1" size="25"/> <i>(Computer Science, Engineering, Architecture, etc.)</i> </p>
+                        <p>Degree: <input id="level1" size="20"/> <i>(Bachelor, Master, PhD, MBA, specialization?)</i> </p>
+                        <p>Other information (maybe the title of your thesis or area of specialization?): </p>
+                        <textarea id="info1" size="50" style="resize: none" rows="3" cols="50"> </textarea>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div>
+			<h3><a href="#">Academic experience</a></h3>
+			<div>Optional section</div>
+		</div>
+		<div>
+			<h3><a href="#">Professional experience</a></h3>
+            <div>Optional section</div>
+            <div>
+                <button class="addProfessionalExpDivButton"> Add another job </button>
+            </div>
+            <div id="professionalMainDiv">
+                <div class="bordedDiv">
+                    <button class="removeDivButton"> Remove this job info </button>
+                    <p>Company: <input id="company1" size="50"/> </p>
+                    <p>Job Title: <input id="title1" size="25"/> <i>(Developer, Researcher, Engineer, etc.)</i> </p>
+                    <p>Start year: <input id="begin1" size="4"/>   End year (leave blank if not finished): <input id="end1" size="4"/> </p>
+                    <p>Details (maybbe what did you do in this job): </p>
+                    <textarea id="info1" size="50" style="resize: none" rows="3" cols="50"> </textarea>
+                </div>
+		</div>
+	</div>
 
   <p class="text"><a href="#" id="generate" class="ui-state-default ui-corner-all button"><span class="ui-icon ui-icon-document"></span>Build CV</a></p>
 
